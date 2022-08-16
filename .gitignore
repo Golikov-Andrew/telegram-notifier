@@ -1,0 +1,5 @@
+tnconf.py
+test_img.png
+.idea/
+**__pycache__
+telegram_notifier_log.txt

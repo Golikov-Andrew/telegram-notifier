@@ -3,7 +3,7 @@ from datetime import datetime
 
 import requests
 
-from tnconf import bot_token, telegram_clients, is_activated
+
 
 
 class TelegramNotifier:
@@ -94,14 +94,15 @@ class TelegramNotifier:
 
 
 if __name__ == '__main__':
+    from tnconf import bot_token, telegram_clients, is_activated
     telegram_notifier = TelegramNotifier(is_activated, bot_token, 'telegram_notifier_log.txt')
     telegram_notifier.load_clients(telegram_clients)
-    # telegram_notifier.send_message_to('GAV', 'content 1')
+    ans = telegram_notifier.send_message_to('GAV', 'content 1')
     # telegram_notifier.send_message_to_all('content 2')
     # telegram_notifier.send_image_to_all('test_img.png')
     # telegram_notifier.send_image_binary_to_all(open('test_img.png', 'rb'))
     # ans = telegram_notifier.send_image_to_all('test_imgf.png')
     # ans = telegram_notifier.send_image_to('GAV','test_img.png')
-    ans = telegram_notifier.send_image_to_all('test_img.png')
+    # ans = telegram_notifier.send_image_to_all('test_img.png')
     print(ans)
 
